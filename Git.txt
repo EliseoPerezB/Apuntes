@@ -1,0 +1,64 @@
+Git Apuntes:
+
+git add: añade los archivos que uno desea a un lugar donde se revisan y se ve que es lo que se envía y lo que no
+		Git add tiene varias formas para agregar archivos, por ejemplo:
+			- git add nombre del archivo
+			- git add ".txt" --> que agrega todo archivo que contenga la extensión txt
+			- git add .      --> que agrega todo archivo que posea dicho repositorio, cosa que no es una buena práctica, pues, puede que se suba algo que no se desea
+			- Si se desea subir más de un archivo específico, lo ideal sería algo así: git add archivo1.txt archivo2.txt
+
+git commit: se comprometen los cambios y archivos que se pasarán al servidor eventualmente
+		El comando para comprometer los archivos anteriormente seleccionados en el stage y verificados con el git status es: 
+ 		- git commit -m "comentario útil, para saber que es lo que se está subiendo"
+ 		- Si se llega a hacer una modificación en un archivo que ya se le hizo un commit antes, este debe ser agregado al stage con el comando git add nombreArchivo, luego se verifica con el git status, y se escribe git commit, esto abrirá el editor para poner un comentario en la primera linea, se escribe el comentario deseado, se guarda y se cierra, y esto se notificará en la bash
+
+git push: se mandan los archivos a un servidor, ya sea, github, bitbucket, etc...
+
+code . --> abre el editor de texto en la carpeta en donde se está navegando
+
+git status: muestra el estado actual del repositorio, en donde se ve si un archivo fue modificado o esta listo en la etapa stage para poder hacer el commit
+SU FORMA MAS RECOMENDABLE Y CONCISA ES: git status -s
+
+git diff --> muestra de manera mas detallada que linea se elimino o agregó de tal archivo en la etapa anterior a agregarlos al stage
+git diff --staged --> muestra los cambios que hay en la etapa stage
+
+rm nombreArchivo --> Elimina un archivo dentro del directorio en el que se esta navegando, posterior a esto, se puede verificar el cambio hecho con git status
+
+git restore --staged nombreArchivo --> este comando es para restaurar el cambio hecho de una eliminación de archivo, proceso antes del commit
+git restore NombreArchivo --> sería el paso posterior a revertir lo del stage, y con este comando se logra recuperar el archivo
+
+mv nombreAntiguoArchivo NombreNuevoArchivo --> comando para cambiar el nombre de un archivo
+Despues del comando anterior, hay que agregar los cambios con (git add archivoantiguo archivonuevo)
+Procede a git commit -m "Renombrando archivo" y listo
+
+Ahora una forma mas simple de cambiar el nombre a un archivo es:
+git mv nombreActual nombreNuevo
+Despues git commit -m "comentario"
+
+Para ignorar un archivo a la hora de subir o commitear, se crea un archivo en el editor llamado .gitignore, en el que se pondrá el nombre o carpeta/ que se desea ignorar, por ende, todo lo listado en este archivo, ya no saldrá al momento de hacer un git status, y el archivo .gitignore, se le hace commit simplemente. 
+
+git log --> historial mas detallado
+git log --oneline --> muestra el historial y los comentarios de los commit hechos mas acotado
+
+Existen ramas dentro de git, que son caminos distintos en los que se pueden agregar cambios, en caso de trabajar con alguien
+Para ver en que rama estoy posicionado --> git branch 
+
+Para crear a una rama nueva --> git checkout -b nombreRamaNueva
+Para cambiarte a una rama --> git checkout nombreRama
+
+Para mostrar el contenido de un archivo --> cat nombreArchivo
+ESTE COMANDO MOSTRARÁ EL CONTENIDO DEL ARCHIVO, SEGUN LA VERSIÓN QUE SE TENGA EN DICHA BRANCH O RAMA, PUEDE QUE SI ESTAMOS EN UNA RAMA NUEVA TENGA COSAS DISTINTAS A LA RAMA MASTER
+
+Para traer los cambios por ejemplo de la rama nueva a la rama master, hay que estar primeramente situados en la rama master, y luego escribir: git merge nombreRama
+
+Para subir el contenido a github o a la nube:
+
+git remote add origin https://github.com/EliseoPerezB/nombrerepositorio.git
+
+git push -u origin main con esto se creará una rama en github y se subirá el contenido
+
+git push para subir contenido
+
+
+
+
