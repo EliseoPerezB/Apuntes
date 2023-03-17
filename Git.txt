@@ -54,6 +54,7 @@ Para traer los cambios por ejemplo de la rama nueva a la rama master, hay que es
 Para subir el contenido a github o a la nube:
 
 git remote add origin https://github.com/EliseoPerezB/nombrerepositorio.git
+para elegir donde poner los archivos git remote add y el link
 
 git push -u origin main con esto se creará una rama en github y se subirá el contenido
 
