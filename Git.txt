@@ -62,6 +62,12 @@ git push para subir contenido
 
 git pull origin main si es que algo que se cambió remoto no se ha cambiado en local
 
+Para borrar un branch local
+git branch -d localBranchName
+
+Para borrar la branch remota
+git push origin --delete remoteBranchName
+
 
 
 
